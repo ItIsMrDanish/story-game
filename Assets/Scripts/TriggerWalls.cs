@@ -4,6 +4,11 @@ public class TriggerWalls : MonoBehaviour {
 
     public GameObject[] objectsToActivate = new GameObject[1];
     public GameObject[] objectsToDeactivate = new GameObject[1];
+    public AudioClip triggerSound;
+
+    public float soundVolume = 0.8f;
+
+    public AudioSource audioSource;
 
     private void OnTriggerEnter(Collider other) {
 
@@ -21,6 +26,11 @@ public class TriggerWalls : MonoBehaviour {
 
                 objectsToDeactivate[i].SetActive(false);
             }
+        }
+
+        if (triggerSound != null && audioSource != null) {
+
+            audioSource.PlayOneShot(triggerSound, soundVolume);
         }
     }
 }
