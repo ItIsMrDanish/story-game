@@ -4,6 +4,7 @@ using System.Collections;
 public class FlickeringFlashlight : MonoBehaviour {
 
     public Light flashlightLight;
+    public GameObject emissiveObject;
 
     public float minTimeBetweenFlickers = 2f;
 
@@ -18,6 +19,11 @@ public class FlickeringFlashlight : MonoBehaviour {
         if (flashlightLight != null) {
 
             flashlightLight.enabled = true;
+        }
+
+        if (emissiveObject != null) {
+
+            emissiveObject.SetActive(true);
         }
 
         StartCoroutine(FlickerRoutine());
@@ -35,10 +41,18 @@ public class FlickeringFlashlight : MonoBehaviour {
                 isFlickering = true;
 
                 flashlightLight.enabled = false;
+                if (emissiveObject != null) {
+
+                    emissiveObject.SetActive(false);
+                }
 
                 yield return new WaitForSeconds(flickerDuration);
 
                 flashlightLight.enabled = true;
+                if (emissiveObject != null) {
+
+                    emissiveObject.SetActive(true);
+                }
 
                 isFlickering = false;
             }
@@ -52,6 +66,11 @@ public class FlickeringFlashlight : MonoBehaviour {
         if (flashlightLight != null) {
 
             flashlightLight.enabled = true;
+        }
+
+        if (emissiveObject != null) {
+
+            emissiveObject.SetActive(true);
         }
     }
 }
