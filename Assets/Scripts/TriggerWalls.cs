@@ -10,6 +10,8 @@ public class TriggerWalls : MonoBehaviour {
 
     public AudioSource audioSource;
 
+    public bool loopSound = false;
+
     private void OnTriggerEnter(Collider other) {
 
         if (!other.CompareTag("Player")) return;
@@ -30,7 +32,17 @@ public class TriggerWalls : MonoBehaviour {
 
         if (triggerSound != null && audioSource != null) {
 
-            audioSource.PlayOneShot(triggerSound, soundVolume);
+            audioSource.volume = soundVolume;
+
+            if (loopSound) {
+
+                audioSource.clip = triggerSound;
+                audioSource.loop = true;
+                audioSource.Play();
+            } else {
+
+                audioSource.PlayOneShot(triggerSound, soundVolume);
+            }
         }
     }
 }
