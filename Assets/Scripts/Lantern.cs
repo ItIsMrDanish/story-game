@@ -6,10 +6,6 @@ public class Lantern : MonoBehaviour {
     public int lanternIndex;
     public GameObject lanternLight;
 
-    public AudioClip successSound;
-    public AudioClip failureSound;
-    public AudioSource audioSource;
-
     private bool isLit = false;
 
     private void Start() {
@@ -33,31 +29,18 @@ public class Lantern : MonoBehaviour {
 
         if (isLit || playerTorchType != requiredTorchType) {
 
-            if (failureSound != null && audioSource != null) {
-
-                audioSource.PlayOneShot(failureSound);
-            }
             return;
         }
 
         PuzzleController puzzle = FindObjectOfType<PuzzleController>();
         if (puzzle != null && !puzzle.CanLightLantern(lanternIndex)) {
 
-            if (failureSound != null && audioSource != null) {
-
-                audioSource.PlayOneShot(failureSound);
-            }
             return;
         }
 
         LightLantern();
         isLit = true;
         playerTorch.DequipTorch();
-
-        if (successSound != null && audioSource != null) {
-
-            audioSource.PlayOneShot(successSound);
-        }
 
         if (puzzle != null) {
 
