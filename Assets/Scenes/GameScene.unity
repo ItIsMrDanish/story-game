@@ -3914,6 +3914,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1648330053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &152354559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152354561}
+  - component: {fileID: 152354560}
+  m_Layer: 0
+  m_Name: Lock Mouse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &152354560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152354559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6268fb59acd6c054fa95126f9726cf78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &152354561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152354559}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 162.14336, y: 164.97218, z: -400.96414}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &153252438
 GameObject:
   m_ObjectHideFlags: 0
@@ -21508,6 +21552,7 @@ MonoBehaviour:
   - {fileID: 565838538}
   - {fileID: 123226639}
   - {fileID: 354492485}
+  - {fileID: 1186555009}
   triggerSound: {fileID: 0}
   soundVolume: 0.8
   audioSource: {fileID: 0}
@@ -69824,6 +69869,7 @@ MonoBehaviour:
   - {fileID: 1854258301}
   - {fileID: 662321663}
   - {fileID: 2066763827}
+  - {fileID: 1872749676}
   triggerSound: {fileID: 0}
   soundVolume: 0.8
   audioSource: {fileID: 0}
@@ -77288,14 +77334,14 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: ffbfe03ce1ab14f49a8f4ee9673c4381, type: 2}
-  m_TreeDistance: 200
-  m_TreeBillboardDistance: 200
+  m_TreeDistance: 50
+  m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 200
-  m_DetailObjectDistance: 1000
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 60
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
+  m_SplatMapDistance: 100
   m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
@@ -77739,3 +77785,4 @@ SceneRoots:
   - {fileID: 189112629}
   - {fileID: 993773125}
   - {fileID: 951442510}
+  - {fileID: 152354561}
